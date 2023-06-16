@@ -5,24 +5,23 @@ cd %~dp0
 
 set updates=0
 
-REM del /y chocotemp.txt
+rem del /Q chocotemp.txt
+echo @echo off > chocoupdate.bat
+echo.
 echo checking updates...
 echo ---
-echo @echo off > chocoupdate.bat
 rem choco outdated --ignore-pinned | tee cotemp.txt
-choco outdated --ignore-pinned > cotemp.txt
-more cotemp.txt
-more +4 cotemp.txt | head -n -2 > chocotemp.txt
-echo ---
+choco outdated --ignore-pinned --limit-output > chocotemp.txt
 
 call :CheckEmpty chocotemp.txt
 if %updates%==0 goto :END
 
 :PROMPT
-	choice /c yx /m "start updates?"
+	choice /c ynx /m "start updates?"
 	rem IF %ERRORLEVEL% EQU 1 goto :ALL
 	IF %ERRORLEVEL% EQU 1 goto :SOME
 	IF %ERRORLEVEL% EQU 2 goto :END
+	IF %ERRORLEVEL% EQU 3 goto :END
 
 
 :ALL
@@ -48,7 +47,7 @@ if %updates%==0 goto :END
 		exit /b
 	)
 	set updates=1
-	cat chocotemp.txt
+	more %~nx1
 	echo ---
 
 
