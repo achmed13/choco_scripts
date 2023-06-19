@@ -9,7 +9,7 @@ rem del /Q chocotemp.txt
 echo @echo off > chocoupdate.bat
 echo.
 echo updating chocolatey...
-choco update chocolatey -y
+choco upgrade chocolatey -y
 echo.
 echo checking updates...
 echo ---
