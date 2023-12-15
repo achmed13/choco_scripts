@@ -1,0 +1,4 @@
+ccleaner|6.18.10838|6.19.10858|false
+pandoc|3.1.9|3.1.10|false
+vscode|1.85.0|1.85.1|false
+vscode.install|1.85.0|1.85.1|false
