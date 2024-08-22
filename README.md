@@ -5,8 +5,14 @@ curl -L -o choco.zip https://github.com/achmed13/choco_scripts/archive/refs/head
 
 [Install Chocolatey](https://github.com/achmed13/choco_scripts/raw/master/install_chocolatey.cmd)
 
-then, as root:
+then, install Git as root:
 
 `choco install gsudo git`
 
-[Install Scripts](https://raw.githubusercontent.com/achmed13/choco_scripts/master/co-install.cmd)
+then, install choco scripts:
+
+[Download Git Install Script](https://raw.githubusercontent.com/achmed13/choco_scripts/master/co-install.cmd)
+
+```
+curl -LO https://raw.githubusercontent.com/achmed13/choco_scripts/master/co-install.cmd
+```
